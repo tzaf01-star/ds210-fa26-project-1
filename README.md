@@ -1,8 +1,6 @@
 # Project 1: Guessing Game
 
-**Author:** _your name here_
-
-
+**Author:** Timur Zafesov
 
 ### What is here so far
 

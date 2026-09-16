@@ -1,5 +1,3366 @@
-Paste your bashcrawl session below the line.
+timurzafesov@crc-dot1x-nat-10-239-62-60 ~ % cd ds210
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210 % ls
+ds210-fa26-project-1	treasure_hunt
+hello_world		treasure_hunt.zip
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210 % ds210-fa26-project-1
+zsh: command not found: ds210-fa26-project-1
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210 % cd ds210-fa26-project-1
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % ls
+Cargo.lock		dungeon_transcript.txt	src
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % open src/dungeon.rs
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % open Visual Studio Code
+The files /Users/timurzafesov/ds210/ds210-fa26-project-1/Visual, /Users/timurzafesov/ds210/ds210-fa26-project-1/Studio, and /Users/timurzafesov/ds210/ds210-fa26-project-1/Code do not exist.
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % open src/dungeon.rs
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % ls
+Cargo.lock		dungeon_transcript.txt	src
+Cargo.toml		README.md		target
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % cat README.md
+# Project 1: Guessing Game
 
+**Author:** _your name here_
+
+
+
+### What is here so far
+
+This repo arrives in two pieces. Right now it holds checkpoint 1, which is the bashcrawl dungeon. The guessing game itself, and the tests for it, will come in an update you will merge in about a week.
+
+```
+src/
+  dungeon.rs        your answers from checkpoint 1. This one is yours to edit
+  tests.rs          the checkpoint 1 tests
+  game.rs           a placeholder until the real game arrives
+  version.rs        which release of the stencil you have. Ignore it
+dungeon_transcript.txt   your bashcrawl session goes in here
+```
+
+**Change only what the handout asks for**: the answers in `dungeon.rs`, your session in `dungeon_transcript.txt`, and the Author line at the top of this file. Leave everything else alone for now.
+
+### Running your tests
+
+```bash
+cargo test --bin game cp1
+```
+
+That checks your five answers and that you pasted a session into `dungeon_transcript.txt`. A fresh clone fails all of them and they go green as you fill them in. The last word in the command is a substring of the test name, so `cargo test --bin game teacher` runs just that one test.
+
+The first `cargo run` or `cargo test` line has to build the project's dependencies and takes a couple of minutes. After that it should be quick.
+
+### About the warnings
+
+The build prints a lot of warnings like "you declared this and never used it." That is expected, since the code that uses them is coming in an updated version of the project.
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % git clone https://github.com/rust4ds/bashcrawl.git
+Cloning into 'bashcrawl'...
+remote: Enumerating objects: 1538, done.
+remote: Counting objects: 100% (1538/1538), done.
+remote: Compressing objects: 100% (845/845), done.
+remote: Total 1538 (delta 666), reused 1538 (delta 666), pack-reused 0 (from 0)
+Receiving objects: 100% (1538/1538), 244.68 KiB | 1.64 MiB/s, done.
+Resolving deltas: 100% (666/666), done.
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % cd bashcrawl
+timurzafesov@crc-dot1x-nat-10-239-62-60 bashcrawl % ls 
+entrance	LICENSE		README.md
+timurzafesov@crc-dot1x-nat-10-239-62-60 bashcrawl % cat README.md
+# Welcome!
+
+> ## About this fork
+>
+> This is Boston University **CDS 210**'s fork of
+> [slackermedia/bashcrawl](https://gitlab.com/slackermedia/bashcrawl), used for
+> Project 1, Checkpoint 1. It is licensed GPLv3, the same as upstream.
+>
+> Changes from upstream, all made 2026-09-10:
+>
+> - `entrance/.rift/spire/mezzanine/.elevator/display`: reduced the number of floors in the elevator to speed up the trip.
+> - `entrance/.vault/stronghold/scroll` and `cellar/armoury/chamber/spell` had different spellings of the same word, now consistent.
+> - `entrance/.rift/spire/mezzanine/.elevator/.satellite/notebook`: adds a hint to strongly reduce the size of the space.
+
+
+
+This is a game to teach you the basics of using a POSIX (Linux, BSD, UNIX) terminal.
+
+## Download and unpack
+
+If you haven't downloaded Bashcrawl yet, go to https://gitlab.com/slackermedia/bashcrawl/-/releases and download the `Source code (zip)` file.
+
+Once the ZIP file has been downloaded to your computer, unzip it as usual.
+
+Now it's time to try it out on your computer.
+
+## Try it on your computer
+
+To start playing, open a terminal.
+
+Type the letters `cd` (just the letters and a space, not the quote marks) into the terminal...
+
+Then a space (press the spacebar)...
+
+Then drag and drop the `entrance` directory from this folder into your terminal.
+
+If your terminal asks you what you want to do with what you have just dragged into it, select "Paste location".
+If it doesn't ask, then expect it to paste the file path of the folder you just dragged into it.
+
+You now have something like this in your terminal window:
+
+```
+$ cd /home/your_username/Downloads/bashcrawl/entrance
+```
+
+(The exact path to the entrance varies, depending on where you saved the file, so it's OK if it looks a little different on your computer.)
+
+Press RETURN on your keyboard.
+
+Your first move is very important.
+Type this into your terminal:
+
+```
+cat scroll
+```
+
+You are now playing the game.
+May the gods save you.
+
+## Restarting the game
+
+If you want a fresh start, the easiest way to start over is to trash the `bashcrawl` folder and unzip a fresh copy.
+
+## Try it online with mybinder
+
+- Follow this link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/slackermedia%2Fbashcrawl/HEAD).
+- Wait a few seconds to a minute until the launcher appears.
+- Click on the Terminal icon.
+
+Note: mybinder sessions are temporary; the game is reinitialized each
+time you disconnect.
+[Learn more about the mybinder service](https://mybinder.readthedocs.io/en/latest/).
+
+## NOTES FOR macOS X
+
+It appears that there is a problem with the standard `Archive Utility` that is called from `Finder` when a zip archive is double-clicked to extract to the current folder, if you're downloading the archive from GitLab rather than using git's `clone` facility to download the game.  You may find that all of the files in the destination folder are set to be executable.  This will cause great confusion as you play the game as intended, because every plain text file will be indistiguishable from executable scripts.  Here's how to avoid this problem:
+
+1.  Open your favorite terminal emulator app (for example, `Terminal.app` or `iTerm2`).
+1.  Navigate to the directory where you want to unpack the zip archive:
+    ```
+    cd /path/to/destination
+    ```
+    Replace `/path/to/destination` with the relative (does not start with slash `/`) or absolute (starts with slash `/`) path to your desired destination.
+1.  Type `unzip ` (that's `unzip` followed by a *space*)
+1.  From the `Finder`, drag the `bashcrawl-master.zip` to your terminal emulator window.  The absolute path to your downloaded archive is pasted into your terminal window, leaving you with:
+    ```
+    unzip /Users/your_username/Downloads/bashcrawl-master.zip
+    ```
+1.  Press RETURN on your keyboard to unpack the contents of the zip archive.
+1.  In the terminal window, change directory to `bashcrawl-master/entrance`:
+    ```
+    cd bashcrawl-master/entrance
+    ```
+
+Now you're in the game!  Have fun!
+timurzafesov@crc-dot1x-nat-10-239-62-60 bashcrawl % cd entrance
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls
+cellar	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cat scroll
+
+It is pitch black in these catacombs.
+You have a magickal spell that lists all items in a room.
+
+To see in the dark, type:     ls
+To move around, type:         cd <directory>
+
+Try looking around this room.
+Then move into one of the next rooms.
+
+EXAMPLE:
+
+$ ls
+$ cd cellar
+
+Remember to cast ``ls`` when you get into the next room!
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd cellar
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % ls
+armoury		scroll		treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % cat scroll
+
+# Illusions are strong here.
+# It is difficult to tell what is a doorway and what is an object.
+#
+# The magic spell you use to look can be augmented.
+#
+# From now on, cast your spell like this:
+#
+# ls -F
+#
+# Directories (the rooms of these catacombs) end with a / symbol.
+#
+# Encounters (programs) end with a * symbol.
+#
+# You can avoid having to type `ls -F` every time by running the
+# following:
+#
+# alias ls='ls -F'
+#
+# This is known as a shell or command alias.  With this alias,
+# typing simply ls by itself will run ls -F. Try it out!
+#
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % ls -F
+armoury/	scroll		treasure*
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % treasure*
+zsh: command not found: treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % cd treasure*
+cd: not a directory: treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1/bashcrawl/entrance/cellar
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % ls
+armoury		scroll		treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % treasure 
+zsh: command not found: treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % cd treasure*
+cd: not a directory: treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % cd cd treasure 
+cd: string not in pwd: cd
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % cd treasure
+cd: not a directory: treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % cd armoury
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ls
+chamber		potion		scroll		treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ls-F
+zsh: command not found: ls-F
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ls -F
+chamber/	potion*		scroll		treasure*
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % cat scroll
+
+# You can interact with items in the room (they end with a *)
+# by running them as a command (a shell script).
+#
+# For example, to collect treasure:
+#
+# ./treasure
+#
+# The . (dot) means *don't move*, and the name of the 
+# script makes the code run.  This is known as a 
+# relative path, and the . means the current room
+# (directory).
+#
+# You may have left treasure in the previous room.
+# Go back to a previous directory with two dots,
+# which means *take a step back*.
+#
+# EXAMPLE:
+#
+# cd ..
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ./treasure
+You have found a gleaming silver **sword**!  You marvel at
+its craftsmanship, and you recall tales from your childhood
+of the great mystic king Rannismir who bore such a sword to
+protect the kingdom from the undead.
+
+Add this item to your inventory:
+
+export I=sword,$I
+
+Remember, you can check your inventory:
+
+echo $I
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ls
+chamber		potion		scroll		treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ./treasure
+You have found a gleaming silver **sword**!  You marvel at
+its craftsmanship, and you recall tales from your childhood
+of the great mystic king Rannismir who bore such a sword to
+protect the kingdom from the undead.
+
+Add this item to your inventory:
+
+export I=sword,$I
+
+Remember, you can check your inventory:
+
+echo $I
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ./chamber
+zsh: permission denied: ./chamber
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % cat scroll
+
+# You can interact with items in the room (they end with a *)
+# by running them as a command (a shell script).
+#
+# For example, to collect treasure:
+#
+# ./treasure
+#
+# The . (dot) means *don't move*, and the name of the 
+# script makes the code run.  This is known as a 
+# relative path, and the . means the current room
+# (directory).
+#
+# You may have left treasure in the previous room.
+# Go back to a previous directory with two dots,
+# which means *take a step back*.
+#
+# EXAMPLE:
+#
+# cd ..
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % cd portion
+cd: no such file or directory: portion
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ./portion
+zsh: no such file or directory: ./portion
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ls -F
+chamber/	potion*		scroll		treasure*
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ./potion
+You have found a potion bottle of swirling
+green liquid. Do you want to drink it?  y/n
+
+y
+The taste of a rustic green plant fills your mouth.  It
+warms and strengthens you.
+
+Create a variable for your health points (HP).  You have
+15HP:
+
+export HP=15
+
+You can check your health at any time:
+
+echo $HP
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % $HP
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % I=sword,$I
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1/bashcrawl/entrance/cellar/armoury
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ls-F
+zsh: command not found: ls-F
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ls -F
+chamber/	potion*		scroll		treasure*
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % cd scroll
+cd: not a directory: scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % cd chamber
+timurzafesov@crc-dot1x-nat-10-239-62-60 chamber % ls
+scroll		spell		statue		treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 chamber % scroll
+zsh: command not found: scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chamber % cat scroll
+
+# You seem to have reached the end of this hall.
+#
+# Turn back and try another path.
+#
+# Remember, to back track one directory, you type:
+#
+# cd ..
+#
+# If you are drawing a map of your progress,
+# you can always get the name of your working
+# directory with this command:
+#
+# pwd
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 chamber % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % ls
+chamber		potion		scroll		treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 armoury % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 cellar % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls -F
+cellar/	chapel/	scrap	scroll	vault/
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd vault
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % ls -F
+glass*		scroll		stronghold/
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % cat scroll
+
+# You have entered an asymmetric room with shards of glass
+# arranged along the floor in haphazard patterns.
+#
+# As you move past them, they each appear to turn slightly,
+# as if watching you go.
+#
+# On the wall is a picture of two goblets:
+# one glows brightly,
+# the other shines darkly
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % ./glass*
+Do you have an ice crystal? y/n  y
+You search in your inventory but find nothing that seems like
+a crystal
+
+You sense that the glass shards are searching for something.
+Whatever it is, you cannot provide it now.
+
+Walk with care.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % ls -F
+glass*		scroll		stronghold/
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % cd stronghold
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls -F
+goblet*		nursery/	orb1		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ./goblet
+You try to grasp the faintly glowing goblet, but it passes
+through your fingers.
+
+Are you stuck? Do you need a hint? y/n  y
+Try searching opensource.com for hints on how to copy files.
+
+Still stuck? Do you need the answer? y/n  orb1
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % cd
+timurzafesov@crc-dot1x-nat-10-239-62-60 ~ % pwd
+/Users/timurzafesov
+timurzafesov@crc-dot1x-nat-10-239-62-60 ~ % ls
+Applications					Downloads					Music						Splash CTC.pdf
+basic calculator				ds210						Pictures					Timur_Zafesov_UE Certificate.pdf
+Desktop						In class activity - terminal.png		practice					TimurZafesov_DS110_S26_HW2.ipynb - Colab.pdf
+Discussion-2					Library						Public						Tokenizer
+Documents					Movies						Relationship Between PADD 3 Middle Distillate
+timurzafesov@crc-dot1x-nat-10-239-62-60 ~ % cd ds210
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210 % ls -F
+ds210-fa26-project-1/	hello_world/		treasure_hunt/		treasure_hunt.zip
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210 % cd ds210-fa26-project-1/
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % ls -F
+bashcrawl/		Cargo.lock*		Cargo.toml*		dungeon_transcript.txt*	README.md*		src/			target/
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % cd echo $I
+cd: string not in pwd: echo
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % export I
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % ecport I=sword,$I
+zsh: command not found: ecport
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % ls
+bashcrawl		Cargo.toml		README.md		target
+Cargo.lock		dungeon_transcript.txt	src
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % cd bashcrawl                          
+timurzafesov@crc-dot1x-nat-10-239-62-60 bashcrawl % ls
+entrance	LICENSE		README.md
+timurzafesov@crc-dot1x-nat-10-239-62-60 bashcrawl % cd entrance
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls
+cellar	chapel	scrap	scroll	vault
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd vault
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % ls
+glass		scroll		stronghold
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % cd stronghold
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls
+goblet	nursery	orb1	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1/bashcrawl/entrance/vault/stronghold
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % echo $I
+sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % export I
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % export HP=15
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % echo $HP
+15
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls
+goblet	nursery	orb1	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls -F
+goblet*		nursery/	orb1		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ./goblet
+You try to grasp the faintly glowing goblet, but it passes
+through your fingers.
+
+Are you stuck? Do you need a hint? y/n  n
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls
+goblet	nursery	orb1	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls -F
+goblet*		nursery/	orb1		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ./goblet
+You try to grasp the faintly glowing goblet, but it passes
+through your fingers.
+
+Are you stuck? Do you need a hint? y/n  y
+Try searching opensource.com for hints on how to copy files.
+
+Still stuck? Do you need the answer? y/n  y
+The cp command copies one file to another. Run these
+commands:
+
+cp orb1 orb2
+cp orb1 orb3
+
+And then run this goblet script again for confirmation.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % cp orb1 
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-aclpSsvXx] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-aclpSsvXx] source_file ... target_directory
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % cat scroll
+
+# There is a fine gold goblet at the center of a
+# runic triangle on the floor.
+# You try to take the goblet, but your hand
+# passes through it as if it were illusory.
+#
+# You notice a glowing orb, labeled orb1, in one
+# corner of the triangle. The other points of the
+# triangle are labeled orb2 and orb3, but the orbs
+# have long since been stolen by tomb raiders.
+#
+# Perhaps adding more orbs would free the goblet's
+# material form.
+#
+# You remember a spell your magick teacher,
+# Caitlyn the Green, taught you long ago:
+# a spell to copy and name objects...
+#
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls
+goblet	nursery	orb1	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls -F
+goblet*		nursery/	orb1		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ./goblet
+You try to grasp the faintly glowing goblet, but it passes
+through your fingers.
+
+Are you stuck? Do you need a hint? y/n  n
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % cp orb1 orb2
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % cp orb2 orb3
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls
+goblet	nursery	orb1	orb2	orb3	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ./goblet
+You have freed the goblet's material form.  Add 'goblet' to
+your inventory.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % export I=goblet,$I
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % echo $I
+goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1/bashcrawl/entrance/vault/stronghold
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls
+goblet	nursery	orb1	orb2	orb3	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls -F
+goblet*		nursery/	orb1		orb2		orb3		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % cd nursery
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % ls -F
+lab/	scroll	spell*
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % scroll
+zsh: command not found: scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % cat scroll
+
+# Once a thriving nursery filled with vibrant plants,
+# this is now the Nursery of the Still Dead (it says so,
+# in writing on the wall).
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % ./spell
+A page from a druid's tome of incantations lies on the
+ground.  It reveals to you how to summon a healing potion:
+
+# To find a file on your system, use the find command.  For
+# example, to search this room:
+
+find . -name "potion"
+
+# Once you've found a potion, copy it to this directory and
+# run this spell script again.
+
+There are no potions in this room.  But try searching
+starting at the entrance.
+
+Hint: use pwd to determine how many rooms (folders) are
+between you and the entrance.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % find . -name 4
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % ./spell
+A page from a druid's tome of incantations lies on the
+ground.  It reveals to you how to summon a healing potion:
+
+# To find a file on your system, use the find command.  For
+# example, to search this room:
+
+find . -name "potion"
+
+# Once you've found a potion, copy it to this directory and
+# run this spell script again.
+
+There are no potions in this room.  But try searching
+starting at the entrance.
+
+Hint: use pwd to determine how many rooms (folders) are
+between you and the entrance.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1/bashcrawl/entrance/vault/stronghold/nursery
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % cp entrance/vault/stronghold/nursery
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-aclpSsvXx] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-aclpSsvXx] source_file ... target_directory
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % ls -F
+lab/	scroll	spell*
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % ./spell
+A page from a druid's tome of incantations lies on the
+ground.  It reveals to you how to summon a healing potion:
+
+# To find a file on your system, use the find command.  For
+# example, to search this room:
+
+find . -name "potion"
+
+# Once you've found a potion, copy it to this directory and
+# run this spell script again.
+
+There are no potions in this room.  But try searching
+starting at the entrance.
+
+Hint: use pwd to determine how many rooms (folders) are
+between you and the entrance.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % cd .
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % ls
+lab	scroll	spell
+timurzafesov@crc-dot1x-nat-10-239-62-60 nursery % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % ls -F
+goblet*		nursery/	orb1		orb2		orb3		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % scroll
+zsh: command not found: scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % cat scroll
+
+# There is a fine gold goblet at the center of a
+# runic triangle on the floor.
+# You try to take the goblet, but your hand
+# passes through it as if it were illusory.
+#
+# You notice a glowing orb, labeled orb1, in one
+# corner of the triangle. The other points of the
+# triangle are labeled orb2 and orb3, but the orbs
+# have long since been stolen by tomb raiders.
+#
+# Perhaps adding more orbs would free the goblet's
+# material form.
+#
+# You remember a spell your magick teacher,
+# Caitlyn the Green, taught you long ago:
+# a spell to copy and name objects...
+#
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % cd .
+timurzafesov@crc-dot1x-nat-10-239-62-60 stronghold % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % ls -F
+glass*		scroll		stronghold/
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % ./glass
+Do you have an ice crystal? y/n  y
+You search in your inventory but find nothing that seems like
+a crystal
+
+You sense that the glass shards are searching for something.
+Whatever it is, you cannot provide it now.
+
+Walk with care.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % cat scroll
+
+# You have entered an asymmetric room with shards of glass
+# arranged along the floor in haphazard patterns.
+#
+# As you move past them, they each appear to turn slightly,
+# as if watching you go.
+#
+# On the wall is a picture of two goblets:
+# one glows brightly,
+# the other shines darkly
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls -F
+cellar/	chapel/	scrap	scroll	vault/
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd chapel
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls -F
+altar*		courtyard/	graveyard/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cat scroll
+
+# There is writing upon the wall.
+#
+# It is written in the common language of the land.
+#
+# It appears to be inscribed in blood:
+#
+#      T U R N    B A C K
+#
+# Speaking of turning back:
+#
+# You can re-use previous commands by pressing the
+# UP and DOWN arrow to scroll through your history.
+# Try it!
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ./altar   
+In the corner is a decaying old altar of some forgotten god.
+There is a small trinket on the ground.  It looks religious
+in nature.
+
+Do you want to put the trinket back on the altar? y/n  
+y
+You place the trinket upon the altar.  You feel a gentle
+breeze pass through the room.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls
+altar		courtyard	graveyard	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls -F
+altar*		courtyard/	graveyard/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd countryard
+cd: no such file or directory: countryard
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd courtyard
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % ls -F
+aviary/		fountain*	rags*		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % scroll
+zsh: command not found: scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % cat scroll
+
+There is a great fountain in the center of this courtyard.
+The waters are bright and clear in the magickal light
+emanating from your eyes.
+
+There were once plants growing here, but they are all
+dead and gnarled now.
+
+If you stand still here, you can hear the soft rippling
+of water, and even the occasional splash.
+
+Perhaps there are fish that yet live in the fountain?
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % ./fountain
+Do you want to approach the fountain? y/n  y
+The waters sparkle in the light of your gaze.  You feel
+drawn to it.
+
+But you suddenly feel strength to turn away.  You hear a
+sigh from the altar in the chapel.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % ls -F
+aviary/		fountain*	rags*		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls -F
+altar*		courtyard/	graveyard/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ,/altar
+zsh: no such file or directory: ,/altar
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ./altar
+In the corner is a decaying old altar of some forgotten god.
+Do you want to take the trinket for yourself? y/n  
+y
+Remember to add the trinket to your inventory!
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % echo I=trinket,$I
+I=trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls _F
+ls: _F: No such file or directory
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ld -F
+ld: -F missing <path>
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls -F
+altar*		courtyard/	graveyard/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd..
+zsh: command not found: cd..
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 bashcrawl % ls
+entrance	LICENSE		README.md
+timurzafesov@crc-dot1x-nat-10-239-62-60 bashcrawl % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % ls
+bashcrawl		Cargo.toml		README.md		target
+Cargo.lock		dungeon_transcript.txt	src
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % cat src/dungeon.rs
+//! What you found in the dungeon.
+//!
+//! Fill in each constant with the answer you found while playing bashcrawl.
+//! Do not rename them and do not change their types: the tests look them up by
+//! name.
+//!
+//! Capitalization and extra spaces do not matter, but spelling does.
+#![allow(dead_code)]
+
+/// The magick teacher who taught you to read runes. Include the epithet.
+pub const TEACHER: &str = "";
+
+/// The kind of animal waddling around the aviary. One word, singular.
+pub const AVIARY_ANIMAL: &str = "";
+
+/// The name the writing on the wall gives the nursery. Five words.
+pub const NURSERY_NAME: &str = "";
+
+/// The object in the stronghold whose material form you have to free. One word.
+pub const STRONGHOLD_TREASURE: &str = "";
+
+/// The name of the thing waiting in the pit. One word.
+pub const FINAL_BOSS: &str = "";
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % ls
+bashcrawl		Cargo.toml		README.md		target
+Cargo.lock		dungeon_transcript.txt	src
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % cd bashcrawl
+timurzafesov@crc-dot1x-nat-10-239-62-60 bashcrawl % ls
+entrance	LICENSE		README.md
+timurzafesov@crc-dot1x-nat-10-239-62-60 bashcrawl % cd entrance
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls
+cellar	chapel	scrap	scroll	vault
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd chapel
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls
+altar		courtyard	graveyard	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd countyard  
+cd: no such file or directory: countyard
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd courtyard
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % ls -F
+aviary/		fountain*	rags*		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % cd aviary
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % ls -F
+crystal*	hall/		penguin*	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % scroll
+zsh: command not found: scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % cat scroll
+
+You enter a room that has been magickally frost-bitten.
+
+Snow and frost covers the ground, an icy pond leading perhaps
+to an underground lake or to the outside, is in the far corner.
+
+A few small black and white birds waddle around the room,
+taking no notice of you.
+
+Tip:
+You can make your shell autocomplete the names of files and
+directories by pressing the Tab key after typing the first
+few letters.
+
+When you move to the next room, try typing
+
+cd h
+
+and then press TAB.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % cd hall
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ls -F
+library/	monster*
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ./monster
+A hulking three-legged beast, with a mouth full of fangs and
+a barbed tail and 8 arms, lumbers toward you.
+
+If you have a sword, you can attack.  Otherwise, you should
+run.
+
+Do you want to attack? y/n  y
+Enter a number:  8
+The monster rolled  78
+You rolled  38
+
+Your attack is deflected off the monster's leathery flesh.
+You take 5 points damage. Deduct this from your HP.
+
+let HP=HP-5
+
+Enter a number:  99
+The monster rolled  29
+You rolled  17
+
+Your attack is deflected off the monster's leathery flesh.
+You take 5 points damage. Deduct this from your HP.
+
+let HP=HP-5
+
+Enter a number:  10
+The monster rolled  72
+You rolled  30
+
+Your attack is deflected off the monster's leathery flesh.
+You take 5 points damage. Deduct this from your HP.
+
+let HP=HP-5
+
+You have been slain by the monster.
+
+GAME OVER!
+
+Restored session: Tue Sep 15 18:15:22 EDT 2026
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1/bashcrawl/entrance
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % echo $I
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % echo $HP
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % export I=trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % export HP=15
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1/bashcrawl/entrance
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls
+cellar	chapel	scrap	scroll	vault
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd chapel
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd countryard
+cd: no such file or directory: countryard
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls
+altar		courtyard	graveyard	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd courtyard
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % ls
+aviary		fountain	rags		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % cd aviary
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % ls
+crystal	hall	penguin	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % ./penguin
+One of the birds finally notices your presence.  It turns
+its head sideways, seemingly beckoning for you to come
+closer.
+
+Do you get closer? y/n  y
+You take a step forward, and the bird rushes toward you, its
+mouth open wide.
+
+Do you happen to have a fish? y/n  n
+The penguin gnaws at your Bag of Holding, hoping for a
+morsel.  Finding nothing, it takes a nip at your hand for 1
+point of damage. (let "HP=HP-1").  You may avoid this damage
+if you have a sword and wish to attack the penguin.
+
+Do you want to attack the penguin? y/n  y
+You attack the penguin, quickly doing away with it with one
+quick slash.  This draws the attention of the other penguins
+in the room.  They band together and rush at you. You fight
+your best.
+
+But a mob of penguins does not tolerate oppression, and you
+soon find yourself sealed in a block of ice.  You stay,
+perfectly preserved for 128 years. When you are thawed, you
+may continue your adventure.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % ls
+crystal	hall	penguin	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % ./crystal
+A white crystal, forged by the Queen of Winter, on the
+frosty ground.
+
+You can prefix this item to your inventory:
+
+I=crystal,$I
+
+Remember, you can check your inventory:
+
+echo $I
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % I=crystal, $I
+zsh: command not found: trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % echo $I
+trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % ls -F
+crystal*	hall/		penguin*	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % ./crystal
+A white crystal, forged by the Queen of Winter, on the
+frosty ground.
+
+You can prefix this item to your inventory:
+
+I=crystal,$I
+
+Remember, you can check your inventory:
+
+echo $I
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % I=crystal, $I
+zsh: command not found: trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % I=crystal,$I
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % echo $I
+crystal,trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % I=crystal,$I
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1/bashcrawl/entrance/chapel/courtyard/aviary
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % ls -F
+crystal*	hall/		penguin*	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % cd hall
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ls -F
+corpse.Gje*	library/	monster*
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ./corpse.Gje
+
+You see the corpse of a slain adventurer on the floor of the
+dungeon.  You find the following items on the corpse:  
+
+goblet,sword,
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % cd librar
+cd: no such file or directory: librar
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % cd library
+timurzafesov@crc-dot1x-nat-10-239-62-60 library % ls -F
+scroll	tome*
+timurzafesov@crc-dot1x-nat-10-239-62-60 library % scroll
+zsh: command not found: scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 library % cat scroll
+#
+# You are in a small library.  There are
+# shelves on all sides of the room,
+# containing many books and knicknacks.
+# Before you, there is a small table
+# with a very large book open on it.
+#
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 library % ./tome
+
+You see a large tome on the table, open
+to a page in the middle of the book.
+
+Do you read it? y/n  y
+
+The tome appears to be a book of spells.  Here is the
+first spell:
+
+
+Map the entire dungeon!
+
+You can see the layout of the entire dungeon using the
+"tree" command.  You may need to install it as a separate
+package, consult your operating system package manager for
+details on how to do this.  If you're reading this from the
+library, your relative current directory path should be:
+
+entrance/chapel/courtyard/aviary/hall/library
+
+If you run the following command, from the library:
+
+tree -F ..
+
+You should see this:
+
+..
+├── library/
+│   ├── scroll
+│   └── tome*
+└── monster*
+
+The "tree" command takes many of the same options as the
+"ls" command, including colors and viewing hidden files.  Go
+back to the entrance and try it out!
+
+Do you want to read another spell? y/n  y
+
+Keep track of where you've been!
+
+Instead of using "cd <room>" and "cd .." to
+navigate the catacombs, you can keep track of the
+rooms you've been in by using "pushd" and "popd".
+"pushd", as the name implies, pushes the directory you
+pass as the argument onto the room (directory) stack.
+Use it like so:
+
+pushd <room>
+
+The angle brackets mean you specify the room (directory),
+you don't type the angle brackets.  To see your current
+stack, type the following command:
+
+dirs
+
+This will print out the list of directories on the stack.
+The data structure is a known as a stack, because you only
+add or remove elements from the top of the stack, it is also
+known as a LIFO (Last In, First Out) data structure.  To
+remove the top room (directory) from the stack, and change
+directory to the new directory on the top of the stack, use
+"popd", like so:
+
+popd
+
+This will remove the top element of the stack ("pop" it off the
+stack), and change directory to the next top of the stack.
+
+Here's an example.  You're in a room (directory) called
+~/bashcrawl/entrance/field/, with the following
+other rooms:
+
+cemetary/ jail/ oubliette/
+
+To change directory to the cemetary, and place it on the directory
+stack, use this:
+
+pushd cemetary
+
+Now, the directory stack (output of the "dirs" command),
+shows this:
+
+~/bashcrawl/entrance/field/cemetary ~/bashcrawl/entrance/field
+
+...and your current directory (present working directory,
+held in the $PWD variable) is the cemetary.  To go back to
+the field, run "popd".  The directory stack will return to
+~/bashcrawl/entrance/field, and your current directory will
+be that directory.  You can mix and match "pushd" with "cd",
+and only the directories you add with "pushd" will be on the
+stack.  This is useful for returning to another directory,
+after exploring the rest of the dungeon.
+
+Good luck!
+
+Do you want to read another spell? y/n  n
+timurzafesov@crc-dot1x-nat-10-239-62-60 library % tree -F
+zsh: command not found: tree
+timurzafesov@crc-dot1x-nat-10-239-62-60 library % tree -F ..
+zsh: command not found: tree
+timurzafesov@crc-dot1x-nat-10-239-62-60 library % tree -F ..
+
+zsh: command not found: tree
+timurzafesov@crc-dot1x-nat-10-239-62-60 library % tree -F ..
+
+zsh: command not found: tree
+timurzafesov@crc-dot1x-nat-10-239-62-60 library % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls 
+altar		courtyard	graveyard	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls -F
+cellar/	chapel/	scrap	scroll	vault/
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd vault
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % ls
+glass		scroll		stronghold
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % ls -F
+glass*		scroll		stronghold/
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % ./glass 
+Do you have an ice crystal? y/n  y
+You place the ice crystal among the shards of glass.  The
+sword in your hands becomes cold.  You feel the power of
+1000 blizzards coursing through it.
+
+Don't forget to remove the crystal from your inventory.  Try
+the following command:
+
+export I=$(sed 's/crystal,//' <<< $I)
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % export I=$(sed 's/crystal,//' <<< $I)
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % ls
+glass		scroll		stronghold
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % cd..
+zsh: command not found: cd..
+timurzafesov@crc-dot1x-nat-10-239-62-60 vault % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls
+cellar	chapel	scrap	scroll	vault
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd chapel
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls
+altar		courtyard	graveyard	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd courtyard
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % cd aviary
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % cd hall
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ls -F
+corpse.Gje*	library/	monster*
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ./monster
+A hulking three-legged beast, with a mouth full of fangs and
+a barbed tail and 8 arms, lumbers toward you.
+
+If you have a sword, you can attack.  Otherwise, you should
+run.
+
+Do you want to attack? y/n  y
+Enter a number:  10
+The monster rolled  28
+You rolled  27
+
+Your attack is deflected off the monster's leathery flesh.
+You take 5 points damage. Deduct this from your HP.
+
+let HP=HP-5
+
+Enter a number:  1
+The monster rolled  71
+You rolled  22
+
+Your attack is deflected off the monster's leathery flesh.
+You take 5 points damage. Deduct this from your HP.
+
+let HP=HP-5
+
+Enter a number:  4444444444444444
+The monster rolled  24
+You rolled  24
+You each parry one another's attacks.  Roll again...
+
+Enter a number:  444444444444444444444444444444444444444444444444444
+The monster rolled  37
+You rolled  28
+
+Your attack is deflected off the monster's leathery flesh.
+You take 5 points damage. Deduct this from your HP.
+
+let HP=HP-5
+
+You have been slain by the monster.
+
+GAME OVER!
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance %  echo $I
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % echo $HP
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % export I=trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % export HP=15
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls
+cellar	chapel	scrap	scroll	vault
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd chapel
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls
+altar		courtyard	graveyard	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd courtyard
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % ls
+aviary		fountain	rags		scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % cd aviary
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % ls
+crystal	hall	penguin	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % cd hall
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ls
+corpse.Bbc	corpse.Gje	library		monster
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ls -F
+corpse.Bbc*	corpse.Gje*	library/	monster*
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ./corpse.Gje
+
+This corpse has already been looted.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ./corpse.Bbc
+
+You see the corpse of a slain adventurer on the floor of the
+dungeon.  You find the following items on the corpse:  
+
+crystal,trinket,goblet,sword,
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ls
+corpse.Bbc	corpse.Gje	library		monster
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ./monster
+A hulking three-legged beast, with a mouth full of fangs and
+a barbed tail and 8 arms, lumbers toward you.
+
+If you have a sword, you can attack.  Otherwise, you should
+run.
+
+Do you want to attack? y/n  y
+Enter a number:  10000000000000000000000000000000000006666888888
+The monster rolled  15
+You rolled  39
+A hit! A palpable hit!  You have slain the beast.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ls
+carcass		corpse.Bbc	corpse.Gje	library		treasure
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ls -F
+carcass*	corpse.Bbc*	corpse.Gje*	library/	treasure*
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % ./treasure
+You have found a **crown**!  Add it to your inventory.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % export I=crown,$I
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % echo $I
+crown,trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % cat carcass
+#!/usr/bin/env bash
+#
+# If you are reading this, you have wandered out of bounds
+# and are reading the code that drives the game.
+#
+#                    Congratulations!
+#
+# Learning Linux is all about curiosity, so read this code and see
+# if you can figure out what it does.
+#
+# When you're ready to continue playing the game, though, stick to
+# the scrolls. If you're stuck, go to Gitlab and create an issue.
+# We're happy to provide hints.
+#
+
+#import global functions from toplevel directory
+FUNCTIONS=$(pwd)
+FUNCTIONS=${FUNCTIONS%entrance*}entrance/.functions
+. $FUNCTIONS
+
+roll() {
+    printf "Enter a number:  "
+    read NUM
+    ALPHA=$RANDOM
+    OMEGA=$RANDOM
+    A=`echo $ALPHA | cut -b 1-2`
+    O=`echo $OMEGA | cut -b 1-2`
+    let "NUM=$ALPHA % $OMEGA"
+    MONSTER=$RANDOM
+    MONSTER=`echo $MONSTER | cut -b 1-2`
+    NUM=`echo $NUM | cut -b 1-2`
+    echo "The monster rolled " $MONSTER
+    echo "You rolled " $NUM
+    resolve
+}
+
+resolve() {
+    if ! grep  --quiet --only-matching 'sword' <<< $I; then
+        cat << EOF
+You do not have a sword!
+
+Your attacks will be less effective.
+
+EOF
+        let NUM=NUM-10
+    fi
+    if [[ $MONSTER -eq $NUM ]]; then
+        cat << EOF
+You each parry one another's attacks.  Roll again...
+
+EOF
+	roll
+    fi
+
+    if [[ $MONSTER -lt $NUM ]]; then
+        cat << EOF
+A hit! A palpable hit!  You have slain the beast.
+
+EOF
+        cat << EOF > treasure
+#!/usr/bin/env bash
+if ! grep  --quiet --only-matching crown <<< \$I; then
+    cat << eof
+You have found a **crown**!  Add it to your inventory.
+
+eof
+
+else
+    echo "This treasure has already been taken."
+fi
+
+EOF
+        chmod +x treasure
+        mv monster carcass
+    else
+        cat << EOF
+
+Your attack is deflected off the monster's leathery flesh.
+You take 5 points damage. Deduct this from your HP.
+
+let HP=HP-5
+
+EOF
+        let HP=HP-5
+        export HP
+        if [ "$HP" -le 0 ]; then
+            cat << EOF
+You have been slain by the monster.
+
+GAME OVER!
+
+EOF
+            gameover
+            exit 1
+        fi
+	roll
+    fi
+}
+
+if [ "$0" = "./carcass" ]; then
+    cat << EOF
+You find the carcass of a foul beast.  Nothing of interest
+lies within its remains.
+
+EOF
+    exit 0
+fi
+
+cat << EOF
+A hulking three-legged beast, with a mouth full of fangs and
+a barbed tail and 8 arms, lumbers toward you.
+
+If you have a sword, you can attack.  Otherwise, you should
+run.
+
+EOF
+printf "Do you want to attack? y/n  "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
+    roll
+else
+    cat << EOF
+You wisely turn and flee.  Quickly cd to the previous
+directory.
+
+EOF
+fi
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+##
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+#
+# Well that didn't work!
+timurzafesov@crc-dot1x-nat-10-239-62-60 hall % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % ls
+crystal	hall	penguin	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 aviary % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 courtyard % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls -F
+altar*		courtyard/	graveyard/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd graveyard
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % ls -F
+columbarium/	lower-quadrant/	padlock*	royal-tombs/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % cat scroll
+# The graveyard is a haunting place, shrouded in mist and silence.
+#
+# Rusted iron gates creak in the cold wind, leading to a field of
+# weathered tombstones, some cracked and others half-hidden by ivy.
+#
+# Twisted, barren trees loom over the field, with branches like
+# skeletal fingers reaching toward a perpetually overcast sky.
+# The air is thick with the scent of damp earth and decay.
+# Every footstep on the gravel path seems to echo in
+# the oppressive stillness.
+#
+# A dark and crumbling mausoleum stands ominously in the
+# centre, its door secured with an old rusty padlock.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % ./padlock
+The old padlock features three dials, each adorned with a distinct
+symbol:
+  an amulet
+  a crown
+  a tombstone with the initials F.K. 
+
+The dials are worn and scratched, their numbers barely visible beneath
+layers of rust and grime. The intricate symbols, though faded, hint at
+the lock's connection to ancient, enigmatic lore.
+
+have you found the numbers? y/n  y
+
+The old crumbling mausoleum stands silent and imposing, its weathered
+stone facade adorned with creeping ivy and shattered stained glass
+windows. The heavy, rusted padlock on the large, ornately carved wooden
+door glints faintly in the dim light as you prepare to enter, the ancient
+numbers you've gathered poised to reveal the secrets within.
+
+One or more Numbers are wrong or missing in your Inventory.
+Remember, you can check your inventory with:
+
+echo $I
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % cd columbarium
+timurzafesov@crc-dot1x-nat-10-239-62-60 columbarium % ls -F
+niches	open*	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 columbarium % cat scroll
+# Before you is the columbarium, a weathered stone structure
+# adorned with carvings of angels and vines. Rows of niches
+# line its walls, some with long burnt-out candles, others
+# with worn inscriptions and small tokens of remembrance.
+#
+# Many have distinctive symbols on their front. Maybe you 
+# can find one that is helpful.
+#
+# If you think you have found the right niche, you can touch
+# it with the following command:
+# 
+# touch <number of niche>
+#
+# This creates an empty file in the current room (directory).
+# After you have created the file, try to "open" the niche.
+#
+# If you know a spell that helps you search, you can make it easier
+# for yourself.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 columbarium % cat niche
+cat: niche: No such file or directory
+timurzafesov@crc-dot1x-nat-10-239-62-60 columbarium % cat niches
+23 Eagle
+05 Dove
+12 Lotus flower
+19 Sword wreathed in flame
+27 Mountain
+04 Book
+16 Tree branch
+09 Sun
+01 Musical notes
+22 Pine tree
+10 An elder god
+15 Amulet
+29 Sea monster
+07 Crescent moon
+25 Butterfly
+18 Cross
+14 A familiar constellation
+30 Flame and candle
+20 Goblet
+08 Winged warrior
+11 Water droplet
+17 Castle
+03 Ibis
+24 Rose
+28 Hammer
+21 Full moon
+02 Anchor  
+26 Wheat sheaf  
+13 Crest of an ancient noble family
+06 Heart
+timurzafesov@crc-dot1x-nat-10-239-62-60 columbarium % touch 15
+timurzafesov@crc-dot1x-nat-10-239-62-60 columbarium % ls -F
+15	niches	open*	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 columbarium % ./open
+You open the niche, revealing a hidden plaque with a number etched 
+into its surface. The quiet of the graveyard thickens as the number 
+**2712** emerges from the shadows.
+
+Remember the number by adding it to your inventory:
+
+export I=2712,$I
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 columbarium % echo $I
+crown,trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 columbarium % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % ls -F
+columbarium/	lower-quadrant/	padlock*	royal-tombs/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % scroll
+zsh: command not found: scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % cat scroll
+# The graveyard is a haunting place, shrouded in mist and silence.
+#
+# Rusted iron gates creak in the cold wind, leading to a field of
+# weathered tombstones, some cracked and others half-hidden by ivy.
+#
+# Twisted, barren trees loom over the field, with branches like
+# skeletal fingers reaching toward a perpetually overcast sky.
+# The air is thick with the scent of damp earth and decay.
+# Every footstep on the gravel path seems to echo in
+# the oppressive stillness.
+#
+# A dark and crumbling mausoleum stands ominously in the
+# centre, its door secured with an old rusty padlock.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % export I=2712,$I
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % echo $I
+2712,crown,trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % cd royal-tombs
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % ls -F
+royals		scroll		sign		statues*
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % scroll
+zsh: command not found: scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % cat scroll
+# As you enter the plot of royal graves, a sense of faded grandeur
+# fills the air. The once imposing gravestones, crafted from marble
+# and adorned with royal crests, now show signs of neglect, their
+# surfaces weathered and chipped. Moss creeps up the bases of the
+# monuments, and the intricate carvings of crowns and heraldry are
+# worn by time.
+#
+# A few of the grandest tombs have cracked open, iron gates rusted
+# and askew. The stone angels and lions, meant to stand as vigilant
+# guardians, are more forlorn than proud. It is quiet here, save for
+# an occasional rustle of dry leaves and the distant call of a crow 
+# echoing through the stillness.
+
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % ls -F
+royals		scroll		sign		statues*
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % ./statues
+Standing in front of the statues, you are thinking about the symbols
+on the padlock. Do you have an item in your inventory that looks familiar?
+
+Do you have the item? y/n  y
+
+You hold the crown in your hands, pondering where to place it.
+
+Enter the number of the statue where you want to place the crown:  7
+
+The weathered gravestone is flanked by ivy-clad pillars, while a
+majestic marble statue stands atop it. The statue, depicting a serene
+figure in royal attire with a tilted crown, gazes out solemnly. Around
+the base, broken lanterns and cracked urns hint at past grandeur,
+their silence only interrupted by the rustling leaves and distant
+raven calls.
+
+As you adjust the crown on the statue's head, it slips from its
+precarious perch and falls to the ground with a clatter.
+In that instant, a dark shimmer of magic escapes from the statue,
+wrapping around you with an unsettling chill.
+
+The magic leaves you feeling disoriented and uneasy, as if shadows
+of the past have momentarily clouded your mind and sapped your strength.
+
+Deduct 5 from your HP variable:
+
+let "HP=HP-5"
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % ls -F
+royals		scroll		sign		statues*
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % cat sign
+# 
+# Visitor, heed this sign:
+# 
+# Within these tombs lies magic old,
+# A spell of aid for your travail.
+# Speak the words, be brave and bold,
+# And guidance shall your path unveil.
+#
+# grep King royals 
+#
+# This spell lists only the lines that contain "King"
+# from the file "royals"
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % cat royals
+This is a list of past royalty, and epitaphs for each:
+
+1. **Baron Fenwick, the Loyal Mastiff**  
+   *"Forever by our side, loyal and true, a faithful companion to the end."*
+
+2. **Princess Elara Ravenscroft**  
+   *"A beacon of grace and compassion, her light guided us through shadows."*
+
+3. **Duke Thorne Ravenscroft**  
+   *"A steadfast leader, his strength and wisdom forged a legacy of honor."*
+
+4. **Lady Seraphine, the Elegant Persian Cat**  
+   *"In every purr, a whisper of grace, her elegance and charm will never fade."*
+
+5. **King Alistair Ravenscroft**  
+   *"A sovereign of great vision and valor, his reign carved in the annals of history."*
+
+6. **Countess Aurora, the Graceful White Dove**  
+   *"In her flight, she carried peace and serenity, a symbol of pure, gentle love."*
+
+7. **Marquis Roland Ashford**  
+   *"A man of nobility and courage, his name lives on in deeds and honor."*
+
+8. **High Priestess Lyra Moonshadow**  
+   *"Her wisdom illuminated the path of the faithful, her spirit forever guiding us."*
+
+9. **Lord Julian Stormhaven**  
+   *"A protector of the realm, his bravery and loyalty were the bedrock of his house."*
+
+10. **Queen Isolde Ravenscroft**  
+    *"A monarch of unmatched grace, her reign was marked by love and strength."*
+
+11. **Elder Miriam Starling**  
+    *"A sage whose gentle counsel and wisdom enriched many lives, her legacy endures."*
+
+12. **Priest Joran Windrider**  
+    *"His prayers soared on the wind, a faithful servant of the divine with a humble heart."*
+
+13. **Cardinal Thaddeus Darkwood**  
+    *"A guardian of the faith, his devotion and guidance will echo through the ages."*
+
+14. **Viscount Thorne, the Clever Falcon**  
+    *"In his swift flight, he was a symbol of keen vision and untamed spirit."*
+
+15. **Lady Arabella Wrenfield**  
+    *"Her kindness and grace were a beacon to all, her memory cherished and revered."*
+
+16. **Marchioness Eveline Blackwood**  
+    *"A noble heart and fierce protector, her strength and wisdom shaped our world."*
+
+17. **Sir Bramble, the Majestic Stag**  
+    *"A majestic spirit of the wild, his noble presence will forever grace our memories."*
+
+18. **Duchess Seraphina Wrenfield**  
+    *"Her beauty and wisdom were unmatched, her legacy woven into the fabric of our hearts."*
+
+19. **Prince Cedric Blackwood**  
+    *"A prince of valor and honor, his life was a testament to courage and nobility."*
+
+20. **Archbishop Malcom Graystone**  
+    *"A pillar of faith and wisdom, his life's work brought solace and strength to many."*%                                timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % ./status
+zsh: no such file or directory: ./status
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % ls
+royals	scroll	sign	statues
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % ./statues
+Standing in front of the statues, you are thinking about the symbols
+on the padlock. Do you have an item in your inventory that looks familiar?
+
+Do you have the item? y/n  y
+
+You hold the crown in your hands, pondering where to place it.
+
+Enter the number of the statue where you want to place the crown:  5
+
+You come upon a solitary grave marked by a grand statue of a king,
+his once-majestic figure now weathered and worn. The crown
+that once adorned his head is missing. Vines climb the statue's base,
+weaving around the king's feet.
+
+As you gently place the crown on the statue's head, a low rumble
+echoes through the ground, and the stone king's eyes slowly open,
+glowing with an ethereal light. The statue shifts, raising its arm
+to reveal a hidden engraving on the base—a secret number, **7432**
+etched in ancient script. It faintly pulses gold, and the king nods
+solemnly to you before returning to stillness.
+
+Remove the crown from your inventory:
+
+export I=$(sed 's/crown,//' <<< $I)
+
+Remember the number by adding it to your inventory:
+
+export I=7432,$I
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % ls
+king	royals	scroll	sign
+timurzafesov@crc-dot1x-nat-10-239-62-60 royal-tombs % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % ls -F
+columbarium/	lower-quadrant/	padlock*	royal-tombs/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % cd lower-quadrant
+timurzafesov@crc-dot1x-nat-10-239-62-60 lower-quadrant % ls -F
+gravestones	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 lower-quadrant % cat scroll
+# In the lower quadrant of the graveyard, the land dips slightly,
+# and fog clings to the uneven ground. The gravestones here are
+# modest and small, many leaning with age, with inscriptions
+# barely legible beneath creeping ivy.
+#
+# The air is damp and heavy, carrying the scent of wet earth and
+# decay. The faint sound of trickling water from an unseen stream
+# accentuates the stillness of the graveyard.
+#
+# As you try to make sense of the gravestones, a spell comes
+# to your mind that could be helpful.
+# You can sort the gravestones by date with the spell:
+#
+# sort gravestones
+#
+# Once you do this, look for a familiar name and take 
+# note of the year of death. Add the year to your Inventory:
+#
+# export I=<year of death>,$I
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 lower-quadrant % sort gravestones
+1765,1702,Frederick Kingsley
+1781,1724,Henry Abernathy
+1787,1736,Agnes Merriweather
+1798,1743,Ezekiel Carrington
+1800,1758,Jonathan Hale
+1802,1749,Harriet Fenwick
+1812,1760,Philip Tremont
+1820,1768,Matthias Blackwood
+1824,1771,Vivian Radcliffe
+1831,1777,Oswald Sinclair
+1832,1785,Samuel Garrison
+1843,1790,Gregor Wilhelm
+1846,1783,Nicholas Barlow
+1851,1797,Louisa Cartwright
+1853,1805,Cornelius Drummond
+1854,1799,Isabel Montrose
+1863,1809,Lydia Redgrave
+1864,1811,Catherine Delacroix
+1867,1820,Josephine Clarke
+1869,1822,Victor Hartwell
+1870,1816,Alexander Grimshaw
+1872,1828,Evelyn Winters
+1875,1832,Eleanor Hawthorne
+1880,1835,Martha Holloway
+1887,1839,Beatrice Lovelace
+1889,1840,Edgar Ravenscroft
+1893,1847,Sarah Whitmore
+1901,1852,Barnabas Drake
+1908,1867,Annabelle Lancaster
+1910,1859,Margaret Westfield
+1914,1863,Alice Kensington
+1917,1871,Thomas Yates
+1926,1883,Eliza Mayfield
+1932,1885,Rupert Ashton
+1935,1889,Simon Blackwell
+1937,1895,Isabella Thorne
+1945,1901,Lucille Gray
+1950,1903,Harold Griffiths
+1954,1910,Diana Albright
+1960,1915,Clara Montague
+Year of Death,Birth Year,Name
+timurzafesov@crc-dot1x-nat-10-239-62-60 lower-quadrant % export I=1765, $I
+export: not an identifier: 2712,crown,trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 lower-quadrant % echo $I
+1765,
+timurzafesov@crc-dot1x-nat-10-239-62-60 lower-quadrant % export I=1765,7432,2712,trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 lower-quadrant % echo $I
+1765,7432,2712,trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 lower-quadrant % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % ls
+altar		courtyard	graveyard	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd chapel
+cd: no such file or directory: chapel
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd graveyard
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % ls
+columbarium	lower-quadrant	padlock		royal-tombs	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % ls -F
+columbarium/	lower-quadrant/	padlock*	royal-tombs/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % ./padlock
+The old padlock features three dials, each adorned with a distinct
+symbol:
+  an amulet
+  a crown
+  a tombstone with the initials F.K. 
+
+The dials are worn and scratched, their numbers barely visible beneath
+layers of rust and grime. The intricate symbols, though faded, hint at
+the lock's connection to ancient, enigmatic lore.
+
+have you found the numbers? y/n  y
+
+The old crumbling mausoleum stands silent and imposing, its weathered
+stone facade adorned with creeping ivy and shattered stained glass
+windows. The heavy, rusted padlock on the large, ornately carved wooden
+door glints faintly in the dim light as you prepare to enter, the ancient
+numbers you've gathered poised to reveal the secrets within.
+
+As the padlock clatters to the ground, the mausoleum's door creaks open,
+revealing a dimly lit interior cloaked in dust and cobwebs.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % ls -F
+columbarium/	lower-quadrant/	mausoleum/	padlock*	royal-tombs/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % cd mausoleum
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % ls -F
+loot*	room	scroll	spell
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cat scroll
+# Inside the decayed mausoleum, you catch glimpses of
+# tarnished silver urns, rusted candlesticks, and ornate chests
+# scattered among the debris. The grand chamber is filled with
+# relics of a bygone era, half-buried and cloaked in dust. 
+#
+# It would be unwise to sift through the loot, for there are
+# often traps protecting the belongings of the dead.
+#
+# Check the contents of the room with:
+# 
+# cat room
+#
+# Once you have found the number of the correct item, pick it up
+# by running the "loot" script.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cat room
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is the chest you are looking for note: 27121981
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is the spell you are looking for%                                                                                     timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cat spell
+# As you hastily scan the room, your gaze falls upon a tattered,
+# ancient scroll partially protruding from beneath a crumbled
+# chest. Ignoring the other trinkets, you pull it free, revealing
+# faded runes scratched onto the fragile parchment. Unfurling the
+# scroll, you recognize it as a spell of aid:
+# 
+# In decayed rooms where shadows stay,
+# 'uniq' will charm the clones away.
+#
+# You can combine spells (commands) with a pipe (|) character.
+# The "uniq" command omits repeated lines.
+# Sort the room, and then pipe its output
+# to "uniq" for a short list. Try the incantation:
+#
+# sort room | uniq
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % sort room | uniq
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is the chest you are looking for note: 27121981
+This is the spell you are looking for
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % ls -F
+loot*	room	scroll	spell
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % ./loot
+As your hand hovers over the array of chests, you feel an eerie
+pull toward one in particular.
+
+What is the number of your choice?  27121981
+As you pry it open, a soft creak reveals its contents. You find a
+trove of ancient **gold coins**, a jewel-encrusted **bracelet**
+with a large emerald, and a set of **silver keys** engraved with 
+mysterious runes. The treasures glimmer with a hint of long-
+forgotten wealth and secrets.
+
+Add the Items to your inventory with:
+
+export I=goldcoins,bracelet,silverkeys,$I,
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % export I=goldcoins,bracelet,silverkeys,$I
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % echo $I
+goldcoins,bracelet,silverkeys,1765,7432,2712,trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % ls -F
+loot*	room	scroll	spell
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cat scroll
+# Inside the decayed mausoleum, you catch glimpses of
+# tarnished silver urns, rusted candlesticks, and ornate chests
+# scattered among the debris. The grand chamber is filled with
+# relics of a bygone era, half-buried and cloaked in dust. 
+#
+# It would be unwise to sift through the loot, for there are
+# often traps protecting the belongings of the dead.
+#
+# Check the contents of the room with:
+# 
+# cat room
+#
+# Once you have found the number of the correct item, pick it up
+# by running the "loot" script.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % ls -F
+loot*	room	scroll	spell
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cat room
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is the chest you are looking for note: 27121981
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the spell you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the debris you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the chest you are looking for 0123456789
+This is not the candlesticks you are looking for 0123456789
+This is not the urn you are looking for 0123456789
+This is the spell you are looking for%                                                                                     timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1/bashcrawl/entrance/chapel/graveyard/mausoleum
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cd..
+zsh: command not found: cd..
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cd..
+zsh: command not found: cd..
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cd..
+zsh: command not found: cd..
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cd..
+zsh: command not found: cd..
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cd.
+zsh: command not found: cd.
+timurzafesov@crc-dot1x-nat-10-239-62-60 mausoleum % cd .. 
+timurzafesov@crc-dot1x-nat-10-239-62-60 graveyard % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 chapel % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls -F
+cellar/	chapel/	scrap	scroll	vault/
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls -laF
+total 24
+drwxr-xr-x  9 timurzafesov  staff   288 Sep 15 18:36 ./
+drwxr-xr-x  8 timurzafesov  staff   256 Sep 15 18:30 ../
+-rw-r--r--  1 timurzafesov  staff  1876 Sep 15 18:30 .functions
+drwxr-xr-x  6 timurzafesov  staff   192 Sep 15 18:30 .rift/
+drwxr-xr-x  5 timurzafesov  staff   160 Sep 15 18:30 cellar/
+drwxr-xr-x  7 timurzafesov  staff   224 Sep 15 19:10 chapel/
+-rw-r--r--  1 timurzafesov  staff   288 Sep 15 18:30 scrap
+-rw-r--r--  1 timurzafesov  staff   332 Sep 15 18:30 scroll
+drwxr-xr-x  6 timurzafesov  staff   192 Sep 15 19:33 vault/
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd .rift
+timurzafesov@crc-dot1x-nat-10-239-62-60 .rift % ls -laF
+total 16
+drwxr-xr-x  6 timurzafesov  staff   192 Sep 15 18:30 ./
+drwxr-xr-x  9 timurzafesov  staff   288 Sep 15 18:36 ../
+drwxr-xr-x  4 timurzafesov  staff   128 Sep 15 18:30 arena/
+-rwxr-xr-x  1 timurzafesov  staff  1909 Sep 15 18:30 box*
+-rw-r--r--  1 timurzafesov  staff   207 Sep 15 18:30 scroll
+drwxr-xr-x  4 timurzafesov  staff   128 Sep 15 18:30 spire/
+timurzafesov@crc-dot1x-nat-10-239-62-60 .rift % cat scroll
+
+# You find yourself on a world not of this reality.
+#
+# The sky is red, mountains hang in the sky and
+# trees are flames that form from smoke
+# decending from the heavens.
+#
+# You have entered the rift.
+#
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 .rift % cd -F
+cd: no such file or directory: -F
+timurzafesov@crc-dot1x-nat-10-239-62-60 .rift % ls -F
+arena/	box*	scroll	spire/
+timurzafesov@crc-dot1x-nat-10-239-62-60 .rift % ./box
+A metal box sits upon the ground.  It appears to be
+illuminated from within.  There is a window in the box. The
+window is black, but there is luminescent writing.
+
+Do you want to read the writing? y/n  y
+
+.--------------------------------,
+|       Welcome to POSIX         |
+|   Enter your username:         |
+'--------------------------------'
+Timur
+timurzafesov@crc-dot1x-nat-10-239-62-60 .rift % cd arena
+timurzafesov@crc-dot1x-nat-10-239-62-60 arena % ls -F
+pit/	scroll
+timurzafesov@crc-dot1x-nat-10-239-62-60 arena % cat scroll
+
+ .:|  T H E C H A M B E R O F  |:.
+.:||  N Y A R L A T H O T E P  ||:.
+-----------------------------------
+| /                             \ |
+| |                             | |
+|||                             |||
+|||                             |||
+|||                             |||
+|||                             |||
+|||                             |||
+|||                             |||
+||| __________________________  |||
+|||/''''                   ''''\|||
+-----------------------------------
+
+# You have entered an ancient arena,
+# probably used for worship.
+#
+# And "worship", in this dangerous realm,
+# usually means blood sport.
+#
+# There is a gaping pit in the center
+# of the arena.
+#
+# If you remember how to summon a potion,
+# this might be a good time to do it.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 arena % cd pit
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % ls -F
+drum		drummer*	nyarlathotep*	scroll		wizard-light*
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % cat scroll
+
+# You have entered the chamber of
+# Nyarlathotep, the crawling chaos.
+#
+# Nyarlathotep, older than the old
+# gods themselves, has been waiting for you.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % ./drummer
+War drums pound in the distance, giving Nyarlathotep
+strength.
+
+If you know a spell to un-summon the drums, Nyarlathotep
+would probably weaken! If you know how to look up a new
+command, learn the "mv" command now.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % cat drum
+
+#
+# You can hear drumming in the distance.
+#
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % mv drum drum_not_active
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % ./drummer
+The drumming has stopped.  Now is your chance to attack!
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % echo $HP
+15
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % ls -F
+drum_not_active		drummer*		nyarlathotep*		scroll			wizard-light*
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % ./nyarlathotep
+In the blink of an eye, Nyarlathotep is standing before you.
+From its hands emanate black necrotic rays, and your mind
+screams.
+
+Are you armed? y/n  y
+Enter a number.
+67
+The monster rolled  31
+You rolled  13
+Your sword swings harmlessly through the air.  You take 10
+points damage from your foe. Deduct this from your HP.
+
+let "HP=HP-10"
+
+Enter a number.
+67
+The monster rolled  13
+You rolled  79
+A hit! A palpable hit!  You have vanquished the elder god of
+chaos!
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % ls -F
+drum_not_active		end			platinum*		treasure*
+drummer*		nyarlathotep*		scroll			wizard-light*
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % ./treasure
+You have found a lock of the **hair** of a god!  Add it to your inventory.
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % echo $I=hair,I
+goldcoins,bracelet,silverkeys,1765,7432,2712,trinket,goblet,sword,=hair,I
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % export I=hair,$I
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % echo $I
+hair,goldcoins,bracelet,silverkeys,1765,7432,2712,trinket,goblet,sword,
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % ls -F
+drum_not_active		end			platinum*		treasure*
+drummer*		nyarlathotep*		scroll			wizard-light*
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % cat end
+You have reached the end of the game.  You know enough Bash
+now to use it for every day activities.  Practice makes
+perfect, so be sure to use it often.  For continued Bash
+tips, visit opensource.com often.
+
+And eventually, we hope to see you contribute your own
+dungeon rooms to Bashcrawl!
+
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % pwd
+/Users/timurzafesov/ds210/ds210-fa26-project-1/bashcrawl/entrance/.rift/arena/pit
+timurzafesov@crc-dot1x-nat-10-239-62-60 pit % cd ~
+timurzafesov@crc-dot1x-nat-10-239-62-60 ~ % pwd
+/Users/timurzafesov
+timurzafesov@crc-dot1x-nat-10-239-62-60 ~ % cd ds210
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210 % ls 
+ds210-fa26-project-1	hello_world		treasure_hunt		treasure_hunt.zip
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210 % cd ds210-fa26-project-1
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % ls
+bashcrawl		Cargo.toml		README.md		target
+Cargo.lock		dungeon_transcript.txt	src
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % src/dungeon.rs
+src/dungeon.rs: line 1: //!: No such file or directory
+src/dungeon.rs: line 2: //!: No such file or directory
+src/dungeon.rs: line 3: //!: No such file or directory
+src/dungeon.rs: line 4: //!: No such file or directory
+src/dungeon.rs: line 5: //!: No such file or directory
+src/dungeon.rs: line 6: //!: No such file or directory
+src/dungeon.rs: line 7: //!: No such file or directory
+src/dungeon.rs: line 10: ///: is a directory
+src/dungeon.rs: line 11: pub: command not found
+src/dungeon.rs: line 11: str: command not found
+src/dungeon.rs: line 13: ///: is a directory
+src/dungeon.rs: line 14: pub: command not found
+src/dungeon.rs: line 14: str: command not found
+src/dungeon.rs: line 16: ///: is a directory
+src/dungeon.rs: line 17: pub: command not found
+src/dungeon.rs: line 17: str: command not found
+src/dungeon.rs: line 19: ///: is a directory
+src/dungeon.rs: line 20: pub: command not found
+src/dungeon.rs: line 20: str: command not found
+src/dungeon.rs: line 22: ///: is a directory
+src/dungeon.rs: line 23: pub: command not found
+src/dungeon.rs: line 23: str: command not found
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % cat src/dungeon.rs
+//! What you found in the dungeon.
+//!
+//! Fill in each constant with the answer you found while playing bashcrawl.
+//! Do not rename them and do not change their types: the tests look them up by
+//! name.
+//!
+//! Capitalization and extra spaces do not matter, but spelling does.
+#![allow(dead_code)]
+
+/// The magick teacher who taught you to read runes. Include the epithet.
+pub const TEACHER: &str = "";
+
+/// The kind of animal waddling around the aviary. One word, singular.
+pub const AVIARY_ANIMAL: &str = "";
+
+/// The name the writing on the wall gives the nursery. Five words.
+pub const NURSERY_NAME: &str = "";
+
+/// The object in the stronghold whose material form you have to free. One word.
+pub const STRONGHOLD_TREASURE: &str = "";
+
+/// The name of the thing waiting in the pit. One word.
+pub const FINAL_BOSS: &str = "";
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % nano src/dungeon.rs
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % cargo test --bin game cp1
+   Compiling project_1_guessing_game v0.1.0 (/Users/timurzafesov/ds210/ds210-fa26-project-1)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.76s
+     Running unittests src/game.rs (target/debug/deps/game-55dcd3da1ddccca4)
+
+running 9 tests
+test tests::cp1::aviary_animal ... ok
+test tests::cp1::final_boss ... ok
+test tests::cp1::nursery_name ... ok
+test tests::cp1::stronghold_treasure ... ok
+test tests::cp1::teacher ... ok
+test tests::cp1::ln_at_least_1 ... FAILED
+test tests::cp1::cd_count_at_least_5 ... FAILED
+test tests::cp1::cat_count_at_least_5 ... FAILED
+test tests::cp1::ls_count_at_least_5 ... FAILED
+
+failures:
+
+---- tests::cp1::ln_at_least_1 stdout ----
+
+thread 'tests::cp1::ln_at_least_1' (3655148) panicked at src/tests.rs:80:9:
+dungeon_transcript.txt shows `ln` typed 0 time(s), and we are looking for at least 1. Check that your whole session is pasted in, and if it is, go back into the dungeon and use `ln` some more.
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- tests::cp1::cd_count_at_least_5 stdout ----
+
+thread 'tests::cp1::cd_count_at_least_5' (3655146) panicked at src/tests.rs:80:9:
+dungeon_transcript.txt shows `cd` typed 0 time(s), and we are looking for at least 5. Check that your whole session is pasted in, and if it is, go back into the dungeon and use `cd` some more.
+
+---- tests::cp1::cat_count_at_least_5 stdout ----
+
+thread 'tests::cp1::cat_count_at_least_5' (3655145) panicked at src/tests.rs:80:9:
+dungeon_transcript.txt shows `cat` typed 0 time(s), and we are looking for at least 5. Check that your whole session is pasted in, and if it is, go back into the dungeon and use `cat` some more.
+
+---- tests::cp1::ls_count_at_least_5 stdout ----
+
+thread 'tests::cp1::ls_count_at_least_5' (3655149) panicked at src/tests.rs:80:9:
+dungeon_transcript.txt shows `ls` typed 0 time(s), and we are looking for at least 5. Check that your whole session is pasted in, and if it is, go back into the dungeon and use `ls` some more.
+
+
+failures:
+    tests::cp1::cat_count_at_least_5
+    tests::cp1::cd_count_at_least_5
+    tests::cp1::ln_at_least_1
+    tests::cp1::ls_count_at_least_5
+
+test result: FAILED. 5 passed; 4 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin game`
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % nano dungeon_transcript.txt
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % .
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ln scroll scroll_link
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % ls
+cellar		chapel		scrap		scroll		scroll_link	vault
+timurzafesov@crc-dot1x-nat-10-239-62-60 entrance % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 bashcrawl % cd ..
+timurzafesov@crc-dot1x-nat-10-239-62-60 ds210-fa26-project-1 % nano dungeon_transcript.txt
 Everything you typed and everything the dungeon printed back, from the moment you
 started to the moment you finished. Do not tidy it up. Wrong turns, typos and dead
 ends are all fine, and demonstrate your real effort and process.
