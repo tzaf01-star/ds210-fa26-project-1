@@ -59,19 +59,33 @@ pub fn random(keeper: &mut SecretKeeper, min: u32, max: u32) -> u32 {
 /// Honest answers mean one of them always is. Decide what to do if the loop ends
 /// anyway, and say why: see "What if you run out of numbers?" in the handout.
 pub fn linear(keeper: &mut SecretKeeper, min: u32, max: u32) -> u32 {
-    // YOUR SOLUTION GOES HERE.
-    todo!("linear")
+    for guess in min..max{
+	if keeper.ask_if_equal(guess){
+		return guess;
+	}
+    }
+panic!("Secret number not  found");
 }
 
 /// Halve the range at each step: ask whether the number is above the midpoint,
 /// discard the half that cannot contain it, and repeat.
 pub fn binary(keeper: &mut SecretKeeper, min: u32, max: u32) -> u32 {
-    // YOUR SOLUTION GOES HERE.
-    todo!("binary")
-}
+    // pub fn binary(keeper: &mut SecretKeeper, min: u32, max: u32) -> u32 {
+    let mut lo = min;
+    let mut hi = max;
+    while hi - lo > 1 {
+        let mid = lo + (hi - lo - 1) / 2;
+        if keeper.ask_if_greater(mid) {
+            lo = mid + 1;
+        } else {
+            hi = mid + 1;
+        }
+    }
 
+    lo
+}
 /// How far `jump` moves on each step forward.
-pub const STRIDE: u32 = 1;
+pub const STRIDE: u32 = 10;
 
 /// Step forward `STRIDE` at a time until the number is behind you, then walk back
 /// through the numbers you skipped.
@@ -79,18 +93,49 @@ pub const STRIDE: u32 = 1;
 /// Like `linear`, this should always find the number inside the loop, but the
 /// compiler can't know that, so you still have to say what happens if the loop ends
 pub fn jump(keeper: &mut SecretKeeper, min: u32, max: u32) -> u32 {
-    // YOUR SOLUTION GOES HERE.
-    todo!("jump")
+    let mut jump_point = min;
+
+    while jump_point < max {
+        if keeper.ask_if_greater(jump_point) {
+            let next = jump_point.saturating_add(STRIDE);
+
+            if next >= max {
+                return linear(keeper, jump_point + 1, max);
+            }
+
+            jump_point = next;
+        } else {
+            let start = jump_point.saturating_sub(STRIDE - 1).max(min);
+            return linear(keeper, start, jump_point + 1);
+        }
+    }
+
+    panic!("Secret number not found");
 }
 
 /// Halve the range like `binary`, but spend one extra question at each step
 /// asking outright whether the midpoint is the number. Finishes in a single
 /// question when it guesses right on the first try.
 pub fn lucky(keeper: &mut SecretKeeper, min: u32, max: u32) -> u32 {
-    // YOUR SOLUTION GOES HERE.
-    todo!("lucky")
-}
+let mut lo = min;
+    let mut hi = max;
 
+    while hi - lo > 1 {
+        let mid = lo + (hi - lo - 1) / 2;
+
+        if keeper.ask_if_equal(mid) {
+            return mid;
+        }
+
+        if keeper.ask_if_greater(mid) {
+            lo = mid + 1;
+        } else {
+            hi = mid;
+        }
+    }
+
+    lo
+}
 // ---------------------------------------------------------------------------
 // Search with memory
 // ---------------------------------------------------------------------------
