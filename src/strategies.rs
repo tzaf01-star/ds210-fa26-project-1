@@ -144,20 +144,45 @@ let mut lo = min;
 /// secret?
 pub fn possible_count(keeper: &SecretKeeper, lo: u32, hi: u32) -> u32 {
     // YOUR SOLUTION GOES HERE.
-    todo!("possible_count")
-}
+let mut count = 0;
 
+for n in lo..=hi{
+	if keeper.is_still_possible(n){
+	count = count +1;
+	}
+}
+count 
+}
 /// The first number in `lo..=hi` that could still be the secret. `None` when
 /// every number in the range has already been used.
 pub fn first_possible(keeper: &SecretKeeper, lo: u32, hi: u32) -> Option<u32> {
-    // YOUR SOLUTION GOES HERE.
-    todo!("first_possible")
+    for n in lo..=hi{
+        if keeper.is_still_possible(n){
+            return Some(n);
+        }
+    }
+    None
 }
 
 /// Halve the range like `binary`, but stop as soon as only one number in it is
 /// still possible. A dealer never repeats a secret until it has used every
 /// number, so the more games you play, the more of the range is ruled out.
 pub fn clever(keeper: &mut SecretKeeper, min: u32, max: u32) -> u32 {
-    // YOUR SOLUTION GOES HERE.
-    todo!("clever")
+let mut lo = min;
+let mut hi = max;
+
+loop {
+        if possible_count(keeper, lo, hi - 1) == 1 {
+            match first_possible(keeper, lo, hi - 1) {
+                Some(number) => return number,
+                None => panic!("No possible number found"),
+            }
+        }
+        let mid = lo + (hi - lo - 1) / 2;
+        if keeper.ask_if_greater(mid) {
+            lo = mid + 1;} 
+        else {
+            hi = mid + 1;
+        }
+    }
 }
